@@ -43,14 +43,5 @@ df.drop('outlet_clean_id', axis = 1, inplace = True)
 df3 = (pd.merge(df, df2, on = 'Торг_точка_чистая')).sort_values(by = ['id'])
 df3.drop('Торг_точка_чистая', axis = 1, inplace = True)
 
-engine.execute(
-        'CREATE TABLE hors.outlets_clean_id ('
-        'id integer NOT NULL,'
-        'Город_дистрибьютора varchar(14) DEFAULT NULL,'
-        'Торг_точка_грязная varchar(262) DEFAULT NULL,'
-        'Торг_точка_грязная_адрес varchar(245) DEFAULT null,'
-        'outlet_clean_id integer DEFAULT NULL)'
-)
-        
         
 df3.to_sql('outlets_clean_id', engine, if_exists='append', schema = 'hors', index = False)
