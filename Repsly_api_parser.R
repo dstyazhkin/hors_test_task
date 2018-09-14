@@ -5,7 +5,7 @@ library(googlesheets)
 extracted_data_nrows <- 1
 
 load("last_id.RData")
-#last_id <- 0
+##last_id <- 0
 
 
 extracted_data_to_upload <- data.frame(matrix(ncol = 9, nrow = 0))
