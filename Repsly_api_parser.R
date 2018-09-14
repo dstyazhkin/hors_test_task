@@ -21,7 +21,7 @@ colnames(extracted_data_to_upload) <-c('PhotoId',
 
 while(extracted_data_nrows > 0) 
 {
-query_params <- list(`contentType` =  "application/json")
+query_params <- list(`contentType` =  "application/xml")
 get_result <- GET(url = paste0("https://api.repsly.com/v3/export/photos/", last_id), 
                   authenticate(user = "8F509842-1964-4474-9650-12DCBCF2E002", 
                                 password = "1B39F561-7BAC-4AD4-9061-C7BA395D3011"),
